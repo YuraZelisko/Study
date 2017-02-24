@@ -17,12 +17,12 @@ public class Tryk {
 	}
 	public  int squere (){
 		int squere = height * width;
-		System.out.println("Площа прямокутника = "+squere);
+		System.out.println("Площа прямокутника = ");
 		return squere;
 	}
 	public  int perimetr (){
 		int perimetr = (height + width) * 2;
-		System.out.println("Периметр прямокутника = "+perimetr);
+		System.out.println("Периметр прямокутника = ");
 //		perimetr = perimetr* perimetr;
 //		System.out.println("Квадрат перитметра = "+ perimetr);
 		return perimetr;
@@ -41,7 +41,7 @@ public class Tryk {
 	
 	public double diagonal(){
 		double diagonal = Math.sqrt((height*height)+(width*width)) ;
-		System.out.println("діагональ прямокутника = "+diagonal);
+		System.out.println("діагональ прямокутника = ");
 		return diagonal;
 		
 	}
