@@ -5,10 +5,12 @@ public class Tryk {
 	int height;
 	int width;
 
-	public Tryk() {
-
-	}
-	
+//	public Tryk() {
+//		this.height = height;
+//		this.width = width;
+//
+//	}
+//	
 	public Tryk(int height, int width) {
 		super();
 		this.height = height;
