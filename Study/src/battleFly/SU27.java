@@ -17,6 +17,32 @@ public class SU27 extends FlyControl implements SpecialForces{
 		this.maxSpeed = maxSpeed;
 		this.color = color;
 	}
+	
+	
+
+
+
+	public int getMaxSpeed() {
+		return maxSpeed;
+	}
+
+
+
+	public void setMaxSpeed(int maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 
 

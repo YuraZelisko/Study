@@ -8,6 +8,7 @@ public class Main {
 		
 		SU27 destroer = new SU27(22, 920, 30, 850, "pinky");
 		
+		
 		destroer.engineStart();
 		destroer.takeOff();
 		destroer.moveUp();
