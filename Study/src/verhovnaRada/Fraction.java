@@ -17,7 +17,7 @@ public class Fraction {
 		int height = scanner.nextInt();
 		String sename = scanner.next();
 		int age = scanner.nextInt();
-		boolean habar = scanner.hasNextByte();
+		boolean habar = scanner.hasNextBoolean();
 		Deputat deputat = new Deputat(weight, height, sename, name, age, habar);
 		deputat.giveHabar();
 		deputats.add(deputat);
