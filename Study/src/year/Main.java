@@ -10,6 +10,8 @@ public class Main {
 		String input = scanner.nextLine();
 		boolean exist = false;
 		
+					System.out.println("Insert month");
+		
 		for (int j = 0; j < month.length; j++) {
 				if(input.equalsIgnoreCase(month[j].name())){
 					System.out.println(input + " is avalible");
