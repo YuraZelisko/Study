@@ -10,7 +10,8 @@ public class Fraction extends Deputat{
 	private String frName;
 	private int quantityDepts;
 	private Deputat deputat;
-	
+	ArrayList<Deputat> deputats = new ArrayList<Deputat>(); 
+	Scanner scanner = new Scanner(System.in);
 	
 	public Fraction(int wight, int height, String sename, String name, 
 			int age, boolean habar, String frName,
@@ -20,17 +21,38 @@ public class Fraction extends Deputat{
 		this.quantityDepts = quantityDepts;
 		this.deputat = deputat;
 	}
-//	public Fraction(String frName, int quantityDepts, Deputat deputat) {
-//		super(wight, height, sename, name, 
-//				age, habar);
-//		this.frName = frName;
-//		this.quantityDepts = quantityDepts;
-//		this.deputat = deputat;
-//
-//	}
-	ArrayList<Deputat> deputats = new ArrayList<Deputat>(); 
-	Scanner scanner = new Scanner(System.in);
+
 	
+	public String getFrName() {
+		return frName;
+	}
+
+
+	public void setFrName(String frName) {
+		this.frName = frName;
+	}
+
+
+	public int getQuantityDepts() {
+		return quantityDepts;
+	}
+
+
+	public void setQuantityDepts(int quantityDepts) {
+		this.quantityDepts = quantityDepts;
+	}
+
+
+	public Deputat getDeputat() {
+		return deputat;
+	}
+
+
+	public void setDeputat(Deputat deputat) {
+		this.deputat = deputat;
+	}
+
+
 	public void addDeputat(){
 		System.out.println("Enter name");
 		String name = scanner.next();
