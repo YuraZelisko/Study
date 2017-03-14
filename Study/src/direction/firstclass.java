@@ -8,14 +8,21 @@ public class firstclass {
 		
 		System.out.println("Enter a number...");
 		Scanner scanner = new Scanner(System.in);
-		int numb = scanner.nextInt();
+		boolean numb0 = scanner.hasNextInt();
 		
-		if(numb %2 == 0){
-			System.out.println("number "+numb+" is parity number");
+		while (numb0==true){
+			int numb = scanner.nextInt();
+		
+			if(numb %2 == 0){
+				System.out.println("number "+numb+" is parity number");
 			
-		}else{
-			System.out.println("number "+numb+" is oddnes number");
-		}
+			}else{
+				System.out.println("number "+numb+" is oddnes number");
+			}
+			}
+			if(numb0==false){
+				System.out.println("Input only numbers");
+			}
 
 	}Scanner close;
 

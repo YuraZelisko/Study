@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class HumType {
 	
+	public static void main(String[] args) {
+		
 	Scanner scanner = new Scanner(System.in);
-	
-	Dishes dishes [] = {new Dishes("salat"), new Dishes("chiken"), 
-			new Dishes("goat"), new Dishes("boar")};
-	
 	Human Toxa = new Human("Anton", 22, "hunter");
 	Human Vitaxa = new Human("Vitalik", 17, "gather");
-
+	Dishes dishes [] = {new Dishes("salat"), new Dishes("chiken"), 
+			new Dishes("goat"), new Dishes("boar")};
 	for (int i = 0; i < dishes.length; i++){
 		if(i > (dishes.length/2)){
 			if(dishes[i].equals(scanner)){
@@ -25,13 +24,14 @@ public class HumType {
 			}
 			else;
 
+
 				
 	}else;
 	
 	
 	Scanner close;
 	
+	}
+}
+}
 
-}
-}
-}

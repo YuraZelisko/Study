@@ -12,7 +12,8 @@ public class Deputat extends Human{
 	
 	
 	
-	public Deputat(int wight, int height, String sename, String name, int age, boolean habar) {
+	public Deputat(int wight, int height, String sename, String name, 
+			int age, boolean habar) {
 		super(wight, height);
 		this.sename = sename;
 		this.name = name;
@@ -43,9 +44,16 @@ public class Deputat extends Human{
 	public void setHabar(boolean habar) {
 		this.habar = habar;
 	}
+	
+	public int getsizeHabar() {
+		return sizeHabar;
+	}
+	public void setsizeHabar(int sizeHabar) {
+		this.sizeHabar = sizeHabar;
+	}
 
 	
-	public void giveHabar(){
+	public int giveHabar(){
 		
 		Scanner scanner = new Scanner(System.in);
 		int size = scanner.nextInt();
@@ -55,13 +63,15 @@ public class Deputat extends Human{
 			System.out.println("Which size of braught you will give?");
 			if(size>5000){
 				System.out.println("police will arest deputat");
+				
 			}else{
 				System.out.println("he escape with money");
 			}
 			
 		}else{
-			System.out.println("he is trufely");
+			System.out.println("he is fair");
 		}
+		return size;
 	}
 	
 	
