@@ -4,27 +4,15 @@ import java.util.Scanner;
 
 public class Deputat extends Human{
 
-	private String sename;
 	private String name;
-	private int age;
-	private boolean habar;
-	private int sizeHabar;
-	
-	
-	
-	public Deputat(int wight, int height, String sename, String name, 
-			int age, boolean habar) {
-		super(wight, height);
-		this.sename = sename;
+	private String secondName;
+	private boolean grafter;
+	private int priceBribes;
+	public Deputat(int weight, int height, String name, String secondName, boolean grafter) {
+		super(weight, height);
 		this.name = name;
-		this.age = age;
-		this.habar = habar;
-	}
-	public String getSename() {
-		return sename;
-	}
-	public void setSename(String sename) {
-		this.sename = sename;
+		this.secondName = secondName;
+		this.grafter = grafter;
 	}
 	public String getName() {
 		return name;
@@ -32,46 +20,42 @@ public class Deputat extends Human{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
+	public String getSecondName() {
+		return secondName;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
 	}
-	public boolean isHabar() {
-		return habar;
+	public boolean isGrafter() {
+		return grafter;
 	}
-	public void setHabar(boolean habar) {
-		this.habar = habar;
+	public void setGrafter(boolean grafter) {
+		this.grafter = grafter;
+	}
+	public int getPriceBribes() {
+		return priceBribes;
+	}
+	public void setPriceBribes(int priceBribes) {
+		this.priceBribes = priceBribes;
 	}
 	
-	public int getsizeHabar() {
-		return sizeHabar;
-	}
-	public void setsizeHabar(int sizeHabar) {
-		this.sizeHabar = sizeHabar;
-	}
-
-	
-	public int giveHabar(){
-		
-		Scanner scanner = new Scanner(System.in);
-		int size = scanner.nextInt();
-	
-		if(habar==true){
-			System.out.println("take habar");
-			System.out.println("Which size of braught you will give?");
-			if(size>5000){
-				System.out.println("police will arest deputat");
-				
-			}else{
-				System.out.println("he escape with money");
-			}
-			
+	public void giveBribe(){
+		if(grafter == false){
+			System.out.println("He is fair man");
 		}else{
-			System.out.println("he is fair");
+			System.out.println("Enter number of money...");
+			int money = Main.scanner.nextInt();
+			if(money>5000){
+				System.out.println("He is bribe");
+			} else if(money > 0){
+				priceBribes = priceBribes + money;
+			}
 		}
-		return size;
+	}
+	@Override
+	public String toString() {
+		return "Deputat [name=" + name + ", secondName=" + secondName + ", grafter=" + grafter + ", priceBribes="
+				+ priceBribes + "]";
 	}
 	
 	

@@ -1,112 +1,94 @@
 package verhovnaRada;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Fraction extends Deputat{
+public class Fraction{
+	
+	ArrayList<Deputat> deputies = new ArrayList<>();
+	private String factionName;
 	
 	
-	private String frName;
-	private int quantityDepts;
-	private Deputat deputat;
-	ArrayList<Deputat> deputats = new ArrayList<Deputat>(); 
-	Scanner scanner = new Scanner(System.in);
 	
-	public Fraction(int wight, int height, String sename, String name, 
-			int age, boolean habar, String frName,
-			int quantityDepts, Deputat deputat) {
-		super(wight, height, sename, name, age, habar);
-		this.frName = frName;
-		this.quantityDepts = quantityDepts;
-		this.deputat = deputat;
+
+	public Fraction(String factionName) {
+		super();
+		this.factionName = factionName;
 	}
 
-	
-	public String getFrName() {
-		return frName;
+	public void addDeputy() {
+		System.out.println("Enter his weight");
+		int weight = Main.scanner.nextInt();
+		System.out.println("Enter his height");
+		int height = Main.scanner.nextInt();
+		System.out.println("Enter his name");
+		String name = Main.scanner.next();
+		System.out.println("Enter his Secondname");
+		String secondName = Main.scanner.next();
+		System.out.println("Is deputy grafter? Enter yes or no");
+		boolean grafter = false;
+		String answer = Main.scanner.next();
+		if (answer.equalsIgnoreCase("yes")) {
+			grafter = true;
+		} else if (answer.equalsIgnoreCase("no")) {
+			grafter = false;
+		}
+		Deputat deputy = new Deputat(weight, height, name, secondName, grafter);
+		deputy.giveBribe();
+		deputies.add(deputy);
 	}
 
-
-	public void setFrName(String frName) {
-		this.frName = frName;
-	}
-
-
-	public int getQuantityDepts() {
-		return quantityDepts;
-	}
-
-
-	public void setQuantityDepts(int quantityDepts) {
-		this.quantityDepts = quantityDepts;
-	}
-
-
-	public Deputat getDeputat() {
-		return deputat;
-	}
-
-
-	public void setDeputat(Deputat deputat) {
-		this.deputat = deputat;
-	}
-
-
-	public void addDeputat(){
-		System.out.println("Enter name");
-		String name = scanner.next();
-		System.out.println("Ente weight");
-		int weight = scanner.nextInt();
-		int height = scanner.nextInt();
-		String sename = scanner.next();
-		int age = scanner.nextInt();
-		boolean habar = scanner.hasNextBoolean();
-		Deputat deputat = new Deputat(weight, height, sename, name, age, habar);
-		deputat.giveHabar();
-		deputats.add(deputat);
-	}
-	public void removeDeputat(){
-		String name = scanner.nextLine();
-		String sename = scanner.nextLine();
-		for (Deputat a : deputats){
-			if(a.getName().equals(name) && a.getSename().equals(sename)){
-				deputats.remove(a);
+	public void remuveDeputy() {
+		System.out.println("Enter his name");
+		String name = Main.scanner.next();
+		System.out.println("Enter his secondname");
+		String secondName = Main.scanner.next();
+		for (int i = 0; i < deputies.size(); i++) {
+			if (name.equalsIgnoreCase(deputies.get(i).getName())
+					&& secondName.equalsIgnoreCase(deputies.get(i).getSecondName())) {
+				deputies.remove(i);
+			} else {
+				System.out.println("No deputy");
 			}
-			
 		}
 
 	}
-	public void allCheaters(){
-		for (Deputat a : deputats){
-			if(a.isHabar()== true){
-				System.out.println(a.getName() + " is briber");
-			}
-			else{
-			System.out.println("Don`t take bribe");
+	public void factionGrafter(){
+		for (int i = 0; i < deputies.size(); i++) {
+			if (deputies.get(i).isGrafter() == true){
+				System.out.println(deputies.get(i).getName() + " " + deputies.get(i).getSecondName() + " briber");
 			}
 		}
 	}
-	public void heaveCheater(){
-		for (Deputat a : deputats){
-			if(a.isHabar()==true){
-				int max = 0;
-				if(a.giveHabar()<max){
-					a.setsizeHabar(max);
-					System.out.println("Most greedy deputat is "+a.getSename());
-				}
+	public void factionBiggestGrafter(){
+		int habar = 0;
+		String deputat = "";
+		for (int i = 0; i < deputies.size(); i++) {
+			if(deputies.get(i).getPriceBribes() > habar){
+				habar = deputies.get(i).getPriceBribes();
+				deputat = deputies.get(i).getName() + " " + deputies.get(i).getSecondName();
 			}
 		}
+		System.out.println(deputat + " biggest briber");
 	}
-	public void allDeputats(){
-		for (Deputat a : deputats){
-			System.out.println(a);
+	
+	public void allDeputies(){
+		for (int i = 0; i < deputies.size(); i++) {
+			System.out.println(deputies.get(i));
 		}
 	}
-	public void clearFraction(){
-		deputats.removeAll(deputats);
-		System.out.println("Goverment is clear from that evil");
+	public void remuveFaction (){
+			deputies.removeAll(deputies);
 		
 	}
+
+	public String getFactionName() {
+		return factionName;
+	}
+
+	public void setFactionName(String factionName) {
+		this.factionName = factionName;
+	}
+
 
 }
