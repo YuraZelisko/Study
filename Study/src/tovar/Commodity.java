@@ -1,11 +1,5 @@
 package tovar;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
-
 public class Commodity {
 	private String name;
 	private int weight;
@@ -36,11 +30,6 @@ public class Commodity {
 	}
 	@Override
 	public String toString() {
-		return "\n [name=" + name + ", weight=" + weight + ", price=" + price + "]";
+		return " [name=" + name + ", weight=" + weight + ", price=" + price + "]";
 	}
-	
-	
-	
-	
-	
 }
