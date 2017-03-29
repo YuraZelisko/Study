@@ -19,12 +19,12 @@ public class Main {
 		double suma = 0;
 	//	if (person.getName().getClass().getSimpleName().equals("Number")){
 		for (Person person3 : list) {
-			if(person.getName() instanceof Number ){
+		//	if(person.getName() instanceof Number ){
 			
 		}
 			
 				
-		}
+		
 		
 		suma = person.getAge()+person2.getAge()+person2.getName();
 		System.out.println(suma);
