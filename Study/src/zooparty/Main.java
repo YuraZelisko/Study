@@ -14,7 +14,9 @@ public class Main {
 		System.out.println("Enter 1 for add Person");
 		System.out.println("Enter 2 for add Pet fo Person");
 		System.out.println("Enter 3 for remove Pet from Person");
+		
 		System.out.println("Enter 4 for remove Person");
+		
 		System.out.println("Enter 5 for remove a currect Pet from all");
 		System.out.println("Enter 6 for show all");
 		System.out.println("Enter 7 exit program");
