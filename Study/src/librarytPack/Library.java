@@ -111,6 +111,7 @@ public class Library {
 			Entry <Author, List<Book>> entry = iterator.next();
 			if(entry.getKey().getName().equalsIgnoreCase(name) &&
 					entry.getKey().getLastName().equalsIgnoreCase(lastName)){
+				
 				while (iterator.hasNext()){
 				entry.getValue().remove(iterator.next());
 			}
