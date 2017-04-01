@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class MyQueue  extends AbstractQueue<Person>{
-
+//	System.out.println("Enter capasity");
 	Scanner scanner = new Scanner(System.in);
 	private List <Person> persons = new ArrayList<>(scanner.nextInt());
 		public MyQueue() {
@@ -95,20 +95,20 @@ public class MyQueue  extends AbstractQueue<Person>{
 			break;
 		}
 		case 4: {
-			iterator();
-			break;
-		}
-		case 5: {
 			size();
 			break;
 		}
-		case 6: {
+		case 5: {
 			showAllPersons();
 			break;
 		}
-		case 7: {
+		case 6: {
 			sortByAge();
 			break;
+		}
+		case 7: {
+			System.out.println("Exit program");
+			System.exit(0);
 		}
 
 		default:
