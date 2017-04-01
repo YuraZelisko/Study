@@ -7,7 +7,5 @@ static	Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter capasity");
 		MyQueue myQueue = new MyQueue();
 		myQueue.menu();
-
 	}
-
 }
