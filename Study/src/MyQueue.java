@@ -10,17 +10,15 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class MyQueue  extends AbstractQueue<Person>{
-//	System.out.println("Enter capasity");
-	Scanner scanner = new Scanner(System.in);
-	private List <Person> persons = new ArrayList<>(scanner.nextInt());
+	private List <Person> persons = new ArrayList<>(Main.capasity);
 		public MyQueue() {
 
 	}
 
 	@Override
 	public boolean offer(Person person) {
-		System.out.println("enter size");
-			  if(size()<scanner.nextInt()){
+		System.out.println("Enter capasity");
+			  if(size()<Main.capasity){
 				  String name = UUID.randomUUID().toString().replaceAll("[^a-zA-Z]", "").toUpperCase().substring(0, 2);
 				  int age = 16 + (int) (Math.random() * 90);
 				  persons.add(new Person(name, age));
@@ -67,16 +65,50 @@ public class MyQueue  extends AbstractQueue<Person>{
 		Collections.sort(persons, new SortByYear());
 	}
 	
+	public void comper(){
+		String name = UUID.randomUUID().toString().replaceAll("[^a-zA-Z]", "").toUpperCase().substring(0, 2);
+		int age = 16 + (int) (Math.random() * 90);
+		sortByAge();
+		persons.remove(persons.size()-1);
+		persons.add(new Person(name, age));
+		sortByAge();
+//		int middle = persons.get(0).getAge();
+//		for (int i=0; i < persons.size()-1; i++) {
+//
+//			if(persons.get(i).getAge()> middle){
+//				middle = persons.indexOf(persons.get(i));
+//				middle = middle +  persons.indexOf(persons.get(i));
+//
+//			}
+//			
+//			else {
+//				middle = persons.get(i).getAge(); 
+//
+//			}
+//			
+//				middle = persons.get(i).getAge();
+//				for (int i=0; i<persons.size(); i++) {
+//				if(persons.get(i).getAge()>middle){
+//					middle = persons.get(i).getAge();
+//					persons.get(i).getAge() = persons.get(i+1).getAge();
+//				}
+//		}
+//			}
+//		}
+		
+	}
+	
 	public void menu(){
 		boolean work;
 		while (true){
 		System.out.println("Enter 1 for offer");
 		System.out.println("Enter 2 for peek");
 		System.out.println("Enter 3 for poll");
-		System.out.println("Enter 4 for iterator");
-		System.out.println("Enter 5 for size");
-		System.out.println("Enter 6 for showAll");
-		System.out.println("Enter 7 for sort by age");
+		System.out.println("Enter 4 for size");
+		System.out.println("Enter 5 for showAllPersons");
+		System.out.println("Enter 6 for sortByAge");
+		System.out.println("Enter 7 for comper");
+		System.out.println("Enter 8 for exit");
 		
 		int input = Main.scanner.nextInt();
 
@@ -107,6 +139,10 @@ public class MyQueue  extends AbstractQueue<Person>{
 			break;
 		}
 		case 7: {
+			comper();
+			break;
+		}
+		case 8: {
 			System.out.println("Exit program");
 			System.exit(0);
 		}
