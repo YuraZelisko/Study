@@ -22,7 +22,12 @@ public class ZooClub {
 	}
 
 	public void addPerson(){
-		String input = new Main().scanner.next();
+		System.out.println("Enter name");
+		String inputName = new Main().scanner.next();
+		System.out.println("Enter age");
+		int inputAge = new Main().scanner.nextInt();
+		Person person = new Person(inputName, inputAge);
+		
 
 	}
 }
