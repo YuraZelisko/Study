@@ -64,14 +64,6 @@ public class Main {
 		pic.createNewFile();
 		ImageIO.write(img, "png", pic);
 		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
