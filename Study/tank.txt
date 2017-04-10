@@ -1,0 +1,7 @@
+Car [id=432, name=CD, year=1954, maxSpeed=90, model=FE]
+Car [id=231, name=DD, year=1925, maxSpeed=57, model=EF]
+Car [id=234, name=CD, year=1940, maxSpeed=158, model=FB]
+Car [id=324, name=EF, year=1969, maxSpeed=188, model=BC]
+
+id=521 name=CD year=1984 maxSpeed=165 model=AD
+id=121 name=AA year=1997 maxSpeed=97 model=FA
