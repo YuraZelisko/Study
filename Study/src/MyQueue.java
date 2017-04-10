@@ -65,13 +65,30 @@ public class MyQueue  extends AbstractQueue<Person>{
 		Collections.sort(persons, new SortByYear());
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void comper(){
+		List <Person> personsCopy = new ArrayList<>(Main.capasity);
+		personsCopy = (List<Person>) ((ArrayList<Person>)persons ).clone();
 		String name = UUID.randomUUID().toString().replaceAll("[^a-zA-Z]", "").toUpperCase().substring(0, 2);
 		int age = 16 + (int) (Math.random() * 90);
-		sortByAge();
-		persons.remove(persons.size()-1);
-		persons.add(new Person(name, age));
-		sortByAge();
+		Collections.sort(personsCopy, new SortByYear());
+		personsCopy.remove(personsCopy.size()-1);
+		personsCopy.add(new Person(name, age));
+//		Collections.sort(personsCopy, new SortByYear());
+		System.out.println(personsCopy);
+		int middle = personsCopy.get(personsCopy.size()-1).getAge();
+		for (int i=0; i < personsCopy.size()-1; i++) {
+			if(personsCopy.get(i).getAge()< middle){
+				middle = personsCopy.indexOf(i);
+				System.out.println(middle);
+				middle = middle +  personsCopy.indexOf(personsCopy.get(i));
+				System.out.println("work"+middle);
+			}
+			else {
+				System.out.println(personsCopy.indexOf(personsCopy.size()-1));
+			}
+		}
+		
 //		int middle = persons.get(0).getAge();
 //		for (int i=0; i < persons.size()-1; i++) {
 //
