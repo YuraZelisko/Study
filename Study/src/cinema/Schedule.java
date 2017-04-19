@@ -22,14 +22,17 @@ public class Schedule {
 
 	@Override
 	public String toString() {
-		return "Schedule [seances=" + seances + "]";
+		return seances.toString();
 	}
 	public void addSeance (){
-		System.out.println("enter title, int start hours, enter minutes");
+		System.out.println("enter title, int duratiun hours/minutes, enter start hours/minutes");
 		String title = Main.scanner.next();
-		int min = Main.scanner.nextInt();
 		int hour = Main.scanner.nextInt();
-		seances.add(new Seance(new Movie(title, (new Time(hour, min))), (new Time(hour, min))));
+		int min = Main.scanner.nextInt();
+		int hourStart = Main.scanner.nextInt();
+		int minStart = Main.scanner.nextInt();
+		seances.add(new Seance(new Movie(title, (new Time(hour, min))), (new Time(hourStart, minStart))));
+		System.out.println(seances);
 	}
 	public void removeSeances (){
 		Iterator<Seance> iter = seances.iterator();
@@ -39,7 +42,8 @@ public class Schedule {
 		   {
 		    iter.remove();
 		   }
-		  }
+		  }		System.out.println(seances);
+
 	}
 	
 }

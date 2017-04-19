@@ -2,21 +2,21 @@ package cinema;
 
 public class Time {
 	
-	int min;
 	int hour;
-	public Time(int min, int hour) {
+	int min;
+	public Time(int  hour, int min) {
 		super();
-		if(min>0 && min<60){
-			this.min = min;
-		}
-		else{
-			System.out.println("enter value between 0-60");
-		}
 		if(hour>0 && hour<24){
 			this.hour = hour;
 		}
 		else{
 			System.out.println("enter value between 0-24");
+		}
+		if(min>0 && min<60){
+			this.min = min;
+		}
+		else{
+			System.out.println("enter value between 0-60");
 		}
 		
 	}
@@ -31,6 +31,10 @@ public class Time {
 	}
 	public void setHour(int hour) {
 		this.hour = hour;
+	}
+	@Override
+	public String toString() {
+		return " hour= " + hour +" min= " + min  ;
 	}
 	
 
